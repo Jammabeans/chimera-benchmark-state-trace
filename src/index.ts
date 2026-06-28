@@ -2,7 +2,7 @@ import { stateTraceCases } from "./cases";
 import { scoreFinalState } from "./score";
 
 export const benchmarkMetadata = {
-  id: "state-trace-scaffold",
+  id: "state-trace",
   weaknessCategory: "state-trace",
   scoring: "final-answer-exact-match"
 } as const;

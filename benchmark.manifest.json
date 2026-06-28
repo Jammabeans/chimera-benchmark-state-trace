@@ -1,10 +1,10 @@
 {
-  "id": "state-trace-scaffold",
-  "name": "State Trace Scaffold Benchmark",
+  "id": "state-trace",
+  "name": "State Trace",
   "version": "1.0.0",
   "description": "Safe synthetic external Chimera benchmark scaffold for state tracking and long-horizon consistency.",
   "weaknessCategory": "state-trace",
-  "supportedModes": ["code", "debug", "architect", "ask"],
+  "supportedModes": ["single-turn", "multi-turn"],
   "entrypoint": "src/index.ts",
   "levels": [
     {
@@ -23,8 +23,5 @@
       "description": "Deterministic six-transition string state trace."
     }
   ],
-  "owner": {
-    "name": "chimera-benchmark-maintainers",
-    "contact": "maintainers@example.com"
-  }
+  "owner": "chimera-labs"
 }

@@ -41,3 +41,12 @@ Still intentionally not included yet:
 - Random generation
 - Advanced scoring rubric
 
+## Manifest contract alignment
+
+Root manifest is kept at `benchmark.manifest.json` and currently aligned to Chimera Core contract expectations:
+
+- `id`: `state-trace`
+- `name`: `State Trace`
+- `supportedModes`: `["single-turn", "multi-turn"]`
+- `owner`: string value (`"chimera-labs"`)
+
