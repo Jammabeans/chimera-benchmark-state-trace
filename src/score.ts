@@ -1,13 +1,31 @@
-import { StateTraceCase, ScoreResult } from "./types";
+import { stateTraceCases } from "./cases";
+import { ScoreAnswerResult, StateTraceCase } from "./types";
 
-export function scoreFinalState(traceCase: Pick<StateTraceCase, "expectedFinalState">, submittedFinalState: string): ScoreResult {
-  const expected = traceCase.expectedFinalState;
-  const received = submittedFinalState;
+function getCaseById(caseId: string): StateTraceCase | undefined {
+  return stateTraceCases.find((candidate) => candidate.id === caseId);
+}
+
+export function scoreAnswer(caseId: string, answerText: string): ScoreAnswerResult {
+  const traceCase = getCaseById(caseId);
+
+  if (!traceCase) {
+    return {
+      correct: false,
+      score: 0,
+      expectedAnswer: "",
+      message: `Unknown case id: ${caseId}`
+    };
+  }
+
+  const expectedAnswer = traceCase.metadata.expectedFinalState;
+  const submittedAnswer = answerText;
+  const correct = submittedAnswer === expectedAnswer;
 
   return {
-    isCorrect: received === expected,
-    expected,
-    received
+    correct,
+    score: correct ? 1 : 0,
+    expectedAnswer,
+    message: correct ? "Correct final state." : "Incorrect final state."
   };
 }
 

@@ -25,6 +25,16 @@ Cases are intentionally:
 
 Scoring is currently minimal and final-answer based: submitted final state is compared to expected final state with exact string match.
 
+## Runtime contract
+
+This package now exposes a minimal static runtime surface for Chimera Core:
+
+- `cases`: deterministic static cases with runtime fields (`id`, `levelId`, `title`, `prompt`, optional metadata)
+- `scoreAnswer(caseId, answerText)`: plain-text final-answer scoring
+- `runtimeBenchmark`: bundled runtime module shape containing manifest metadata, cases, and scoring
+
+Answers are plain text only, cases are static (no generation/loading), and scoring remains simple exact match against each case's expected final state.
+
 ## Current status
 
 The repository now includes:
