@@ -1,0 +1,14 @@
+{
+  "name": "chimera-benchmark-state-trace",
+  "version": "0.1.0",
+  "private": true,
+  "description": "External Chimera benchmark scaffold targeting state-trace weakness.",
+  "license": "UNLICENSED",
+  "type": "commonjs",
+  "scripts": {
+    "build": "tsc -p tsconfig.json"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.0"
+  }
+}
